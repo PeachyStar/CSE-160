@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Vector Tests</title>
+</head>
+
+<body>
+  Test 1 set([4, 7, 8]): <span id=test1></span>
+  <br>
+  Test 2 [1000, 432, -56.3] + [-999, 23, 0]: <span id=test2></span>
+  <br>
+  Test 3 [5677, -50, 28] - [-1, -49, 27]: <span id=test3></span>
+  <br>
+  Test 4 [58.4, -45, 999999] / -56.3: <span id=test4></span>
+  <br>
+  Test 5 [-568, 214789, -251] * 2.7: <span id=test5></span>
+  <br>
+  Test 6 [2, 6.8, -23] dot [8, -2, -9]: <span id=test6></span>
+  <br>
+  Test 7 [34, 6, 34.2222] cross [87, 34.8675, -234]: <span id=test7></span>
+  <br>
+  Test 8 magnitude([45.2, -23.7, 9923]): <span id=test8></span>
+  <br>
+  Test 9 normalize([-87, 22, 66.45623]): <span id=test9></span>
+
+  <script src="cuon-matrix-cse160.js"></script>
+  <script>
+    var ERROR = 0.1
+
+    function verify(vect, sol, text) {
+      passed = vect.every((val, i) => Math.abs(val - sol[i]) < ERROR)
+      passed ? text.innerHTML = "Passed" : text.innerHTML = "Failed"
+    }
+    // Test 1 set([4, 7, 8])
+    let text = document.getElementById("test1")
+    let vect1 = new Vector3([0, 0, 0])
+    let vect2 = new Vector3([4, 7, 8])
+    vect1.set(vect2)
+    let v1 = vect1.elements
+    verify(v1, [4, 7, 8], text)
+
+    // Test 2 [1000, 432, -56.3] + [-999, 23, 0]
+    text = document.getElementById("test2")
+    vect1 = new Vector3([1000, 432, -56.3])
+    vect2 = new Vector3([-999, 23, 0])
+    vect1.add(vect2)
+    let v = vect1.elements
+    verify(v, [1, 455, -56.3], text)
+
+    // Test 3 [5677, -50, 28] - [-1, -49, 27]
+    text = document.getElementById("test3")
+    vect1 = new Vector3([5677, -50, 28])
+    vect2 = new Vector3([-1, -49, 27])
+    vect1.sub(vect2)
+    v = vect1.elements
+    verify(v, [5678, -1, 1], text)
+
+    // Test 4 [58.4, -45, 999999] / -56.3
+    text = document.getElementById("test4")
+    let vect = new Vector3([58.4, -45, 999999])
+    vect.div(-56.3)
+    v = vect.elements
+    verify(v, [-1.037300178, 0.79928952, -17761.971580817], text)
+
+    // Test 5 [-568, 214789, -251] * 2.7
+    text = document.getElementById("test5")
+    vect = new Vector3([-568, 214789, -251])
+    vect.mul(2.7)
+    v = vect.elements
+    verify(v, [-1533.6, 579930.3, -677.7], text)
+
+    // Test 6 [2, 6.8, -23] dot [8, -2, -9]
+    text = document.getElementById("test6")
+    vect1 = new Vector3([2, 6.8, -23])
+    vect2 = new Vector3([8, -2, -9])
+    let num = Vector3.dot(vect1, vect2)
+    Math.abs(num - 209.4) < ERROR ? text.innerHTML = "Passed" : text.innerHTML = "Failed"
+
+    // Test 7 [34, 6, 34.2222] cross [87, 34.8675, -234]
+    text = document.getElementById("test7")
+    vect1 = new Vector3([34, 6, 34.2222])
+    vect2 = new Vector3([87, 34.8675, -234])
+    v = Vector3.cross(vect1, vect2).elements
+    verify(v, [-2597.2425585, 10933.3314, 663.495], text)
+
+    // Test 8 magnitude([45.2, -23.7, 9923])
+    text = document.getElementById("test8")
+    vect = new Vector3([45.2, -23.7, 9923])
+    num = vect.magnitude()
+    Math.abs(num - 9923.131246235) < ERROR ? text.innerHTML = "Passed" : text.innerHTML = "Failed"
+
+    // Test 9 normalize([-87, 22, 66.45623])
+    text = document.getElementById("test9")
+    vect = new Vector3([-87, 22, 66.45623])
+    v = vect.normalize().elements
+    verify(v, [-0.779104913, 0.197015035, 0.595130751], text)
+  </script>
+</body>
+
+</html>
