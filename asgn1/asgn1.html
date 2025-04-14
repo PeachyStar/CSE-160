@@ -9,20 +9,29 @@
     <canvas id="webgl" width="400" height="400">
     Please use a browser that supports "canvas"
     </canvas>
-
+    <img src="butterfly.jpg" alt="Butterfly" style="width:400px;height:400px;">
     <p>
-    <button type='button' id='clearButton'>Clear</button>
+    This drawing program supports color transparency and smooth lines while dragging.
     <p>
-    <button type='button' id='pointButton'>Point</button>
+    <button type='button' id='clearButton'>Clear Canvas</button>
+    <button type='button' id='butterflyButton'>Draw Butterfly</button>
+    <p>
+    Brush Shape:
+    <br>
+    <button type='button' id='pointButton'>Square</button>
     <button type='button' id='triangleButton'>Triangle</button>
     <button type='button' id='circleButton'>Circle</button>
     <p>
+    Paint Color:
+    <br>
     <input type="range" min="0" max="100" value="100" class="slider" id="redSlide">Red 
     <br>
     <input type="range" min="0" max="100" value="100" class="slider" id="greenSlide">Green 
     <br>
     <input type="range" min="0" max="100" value="100" class="slider" id="blueSlide">Blue 
     <br>
+    <input type="range" min="0" max="100" value="100" class="slider" id="alphaSlide">Transparency
+    <p>
     <input type="range" min="2" max="50" value="10" class="slider" id="sizeSlide">Size 
     <br>
     <input type="range" min="3" max="50" value="10" class="slider" id="circleSlide">Segments per Circle
