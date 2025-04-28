@@ -176,7 +176,7 @@ function handleClickCoordinates(ev) {
 }
 
 let eyeColor = [0, 0.15, 0, 1];
-let bodyColor = [140/255, 100/255, 80/255, 1];
+let bodyColor = [140/255, 100/255, 50/255, 1];
 let legColor = [100/255, 60/255, 10/255,1];
 
 function renderAllShapes() {
