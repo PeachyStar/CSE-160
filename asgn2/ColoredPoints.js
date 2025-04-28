@@ -86,6 +86,7 @@ let g_speed = 1;
 function addHtmlUiActions(){
   document.getElementById('toggle').onclick = function() {if(Animation){Animation=false;} else {Animation=true}; renderAllShapes();};
   document.getElementById('speedSlide').addEventListener('mousemove', function() {g_speed = this.value; renderAllShapes();});
+  document.getElementById('cameraSlide').addEventListener('mousemove', function() {g_globalAngles[1] = this.value; renderAllShapes();});
   document.getElementById('lowerArmSlide').addEventListener('mousemove', function() {g_lowerArmAngle = this.value; renderAllShapes();});
   document.getElementById('upperArmSlide').addEventListener('mousemove', function() {g_upperArmAngle = this.value; renderAllShapes();});
 }
