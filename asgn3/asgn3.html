@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blocky World</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p id="numdot"> XXX </p>
+    Controls:
+    <br>W: forward&emsp;&emsp;&emsp;Space: up
+    <br>S: backward&emsp;&emsp; Shift: down
+    <br>A: left&emsp;&emsp;&emsp;&emsp;&emsp; E: pan right
+    <br>D: right&emsp;&emsp;&emsp; &emsp; Q: pan left
+      
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Circle.js"></script>
+    <script src="Cube.js"></script>
+    <script src="camera.js"></script>
+    <script src="World.js"></script>
+  </body>
+</html>
