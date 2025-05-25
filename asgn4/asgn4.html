@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blocky World</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p id="numdot"> XXX </p>
+    Camera Controls:
+    <br>W: forward&emsp;&emsp;&emsp;Space: up
+    <br>S: backward&emsp;&emsp; Shift: down
+    <br>A: left&emsp;&emsp;&emsp;&emsp;&emsp; E: pan right
+    <br>D: right&emsp;&emsp;&emsp; &emsp; Q: pan left
+    <p><button type="button" id="toggle">Toggle Animation</button>&emsp;
+    <button type="button" id="toggleNormal">Toggle Normal</button>&emsp;
+    <button type="button" id="toggleLight">Toggle Light</button>
+    <p><input type="range" min="-250" max="250" value="0" class="slider" id="LightXSlide">Light At X&emsp;&emsp;
+    <input type="range" min="-250" max="250" value="0" class="slider" id="LightYSlide">Light At Y&emsp;&emsp;
+    <input type="range" min="-250" max="250" value="0" class="slider" id="LightZSlide">Light At Z
+    <p><input type="range" min="0" max="255" value="255" class="slider" id="LightRSlide">Light Red&emsp;
+    <input type="range" min="0" max="255" value="255" class="slider" id="LightGSlide">Light Green&emsp;
+    <input type="range" min="0" max="255" value="255" class="slider" id="LightBSlide">Light Blue
+    <p></p><input type="range" min="1" max="314" value="40" class="slider" id="LightAngleSlide">Light Angle
+    
+  
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Cube.js"></script>
+    <script src="Sphere.js"></script>
+    <script src="camera.js"></script>
+    <script src="World.js"></script>
+  </body>
+</html>
