@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.177.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.177.0/examples/jsm/"
+        }
+    }
+    </script>
+  </head>
+
+  <div id="loading-screen">
+    <h1>Loading...</h1>
+  </div>
+
+  <style>
+    #loading-screen {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      color: #fff;
+      font-family: serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+  </style>
+
+  <body>
+    <canvas id="c"></canvas>
+    <script type="module" src="World.js"></script>
+  </body>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; width: 100vw; height: 100vh; }
+  </style>
+
+  <audio id="music" autoplay loop>
+    <source src="Clair de Lune.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    const audio = document.getElementById('music');
+    audio.volume = 0.3;
+  </script>
+</html>
