@@ -57,7 +57,7 @@ function main() {
     const aLight = new THREE.AmbientLight(0xffffff, 0.05)
     scene.add(aLight);
 
-    const light = new THREE.HemisphereLight(0xfffff, 0x00000, 0.3);
+    const light = new THREE.HemisphereLight(0xfffff, 0x00000, 0.1);
     scene.add(light);
 
     //ground
